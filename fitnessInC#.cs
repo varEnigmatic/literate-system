@@ -14,22 +14,32 @@ namespace RemoveTheWrench.FitApplication
 	{
 		static void Main(string[] args)
 		{
-			int theBigTotal = 10;
+			int theBigTotal = 0;
 			bool keepItUp = true;
 			
 			while (keepItUp) 
 			{
-				Console.Write("Enter the amount of time you have exercised: ");
-				
+				Console.Write("Enter the amount of time you have exercised or type \"quit\" to exit: ");
 				string userEntry = Console.ReadLine();
 				
-				int timeInMinutes = int.Parse(userEntry); //parse
+				if (userEntry == "quit")
+				{
+					keepItUp = false;
+				}
+				else
+				{
+					int timeInMinutes = int.Parse(userEntry); //parse
 				
-				theBigTotal = theBigTotal + timeInMinutes; //total minutes exercised assigned 
+					theBigTotal = theBigTotal + timeInMinutes; //total minutes exercised assigned 
 				
-				Console.WriteLine("Your total exercise time is: " + theBigTotal + " minutes"); /*output will ask user at this point to enter in amount of time exercised.  After amount entered by user, output will display the total exercise time to the user in minutes only.*/
-			}
+					Console.WriteLine("Your total exercise time is: " + theBigTotal + " minutes"); /*output will ask user at this point to enter in amount of time exercised.  After amount entered by user, output will display the total exercise time to the user in minutes only.*/
+				}
 			
 			}
+			
+			Console.WriteLine("Moses, your muscles are getting HUGE!!!");
 		}
 	}
+}
+	
+	
