@@ -28,13 +28,29 @@ namespace RemoveTheWrench.FitApplication
 				}
 				else
 				{
+					
 					float timeInMinutes = float.Parse(userEntry); //parse
 
-					theBigTotal = theBigTotal + timeInMinutes; //total minutes exercised assigned 
+					theBigTotal = theBigTotal + timeInMinutes;
+					if (theBigTotal <= 0) {
+						Console.WriteLine(theBigTotal + " is not an acceptable value\n");
+						continue;
+
+					    }else if(theBigTotal <= 10) {
+						Console.Write("You can do a little more, try harder\n");
+
+						}else if(theBigTotal <= 30 && timeInMinutes >= 11) {
+							Console.WriteLine("You are on the right track\n");
+
+						}else{
+							Console.WriteLine("Looks like you will be ready for the olympics soon!\n");
+						}
+
+					 //total minutes exercised assigned 
 
 					Console.WriteLine("Your total exercise time is: " + theBigTotal + " minutes"); /*output will ask user at this point to enter in amount of time exercised.  After amount entered by user, output will display the total exercise time to the user in minutes only.*/
 				}
-
+				// repeat until user quits
 			}
 
 			Console.WriteLine("Moses, your muscles are getting HUGE!!!");
