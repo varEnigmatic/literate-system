@@ -1,0 +1,5 @@
+/home/var/Desktop/fitnessApp/fitnessApp/obj/x86/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/home/var/Desktop/fitnessApp/fitnessApp/bin/Debug/fitnessApp.exe.mdb
+/home/var/Desktop/fitnessApp/fitnessApp/bin/Debug/fitnessApp.exe
+/home/var/Desktop/fitnessApp/fitnessApp/obj/x86/Debug/fitnessApp.exe
+/home/var/Desktop/fitnessApp/fitnessApp/obj/x86/Debug/fitnessApp.exe.mdb
