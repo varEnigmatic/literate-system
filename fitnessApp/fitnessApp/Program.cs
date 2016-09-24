@@ -12,32 +12,37 @@ namespace RemoveTheWrench.FitApplication
 {
 	class FitnessApp
 	{
+		
 		static void Main(string[] args)
-		{
-			float theBigTotal = 0;
-			bool keepItUp = true;
+		{//
+			
+			double theBigTotal = 0;
 
-			while (keepItUp) 
+
+
+
+			while (true) 
 			{
 				Console.Write("Enter the amount of time you have exercised or type \"quit\\stop\" to exit: ");
 				string userEntry = Console.ReadLine();
 
-				if (userEntry == "quit" || userEntry == "exit")
+				if (userEntry.ToLower() == "quit" || userEntry.ToLower() == "exit")
 				{
-					keepItUp = false;
+					break;
 				}
-				else
-				{
-					
-					float timeInMinutes = float.Parse(userEntry); //parse
+					try 
+					{
+						
 
-					theBigTotal = theBigTotal + timeInMinutes;
-					if (theBigTotal <= 0) {
-						Console.WriteLine(theBigTotal + " is not an acceptable value\n");
-						continue;
+					double timeInMinutes = double.Parse(userEntry);
+						theBigTotal += timeInMinutes;//this represents the total number of minutes given by user
 
-					    }else if(theBigTotal <= 10) {
-						Console.Write("You can do a little more, try harder\n");
+						if (theBigTotal <= 0) {
+							Console.WriteLine(theBigTotal + " is not an acceptable value\n");
+							continue;
+
+						}else if(theBigTotal <= 10) {
+							Console.Write("You can do a little more, try harder\n");
 
 						}else if(theBigTotal <= 30 && timeInMinutes >= 11) {
 							Console.WriteLine("You are on the right track\n");
@@ -46,14 +51,22 @@ namespace RemoveTheWrench.FitApplication
 							Console.WriteLine("Looks like you will be ready for the olympics soon!\n");
 						}
 
+						//parse
+					}
+					catch(FormatException) 
+					{
+						Console.WriteLine ("No No No");
+						continue;
+					}
+
 					 //total minutes exercised assigned 
 
 					Console.WriteLine("Your total exercise time is: " + theBigTotal + " minutes"); /*output will ask user at this point to enter in amount of time exercised.  After amount entered by user, output will display the total exercise time to the user in minutes only.*/
-				}
+
 				// repeat until user quits
 			}
 
 			Console.WriteLine("Moses, your muscles are getting HUGE!!!");
 		}
 	}
-}
+};
